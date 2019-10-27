@@ -14,6 +14,7 @@
 
             <ul class="dropdown-menu">
                 <li><a href="{{ route('admin.profile.edit') }}">{{ trans('user::users.profile') }}</a></li>
+                <li><a href="https://dashboard.tawk.to/#/chat" target="_blank">Message</a></li>
                 <li><a href="{{ route('admin.logout') }}">{{ trans('user::auth.logout') }}</a></li>
             </ul>
         </li>
