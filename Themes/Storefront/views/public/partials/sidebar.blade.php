@@ -1,5 +1,6 @@
 <div class="sidebar">
     <ul class="sidebar-content clearfix">
+        dfgdfgdfg
         @foreach ($categoryMenu->menus() as $menu)
             <li>
                 <a href="{{ $menu->url() }}">{{ $menu->name() }}</a>

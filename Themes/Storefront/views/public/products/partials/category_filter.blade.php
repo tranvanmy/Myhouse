@@ -5,7 +5,7 @@
         <ul class="filter-category list-inline">
             @foreach ($categories as $category)
                 <li class="{{ request('category') === $category->slug ? 'active' : '' }}">
-                    <a href="{{ request()->fullUrlWithQuery(['category' => $category->slug]) }}">
+                    <a href="{{ request()->fullUrlWithQuery(['category' => $category->slug]) }}" onclick="clearDataSearh()">
                         {{ $category->name }}
                     </a>
 
@@ -14,6 +14,14 @@
                     @endif
                 </li>
             @endforeach
+
+            <script>
+                function clearDataSearh()
+                {
+                    // document.getElementById("search-box").value = "";
+                    console.log(1212);
+                }
+            </script>
         </ul>
     </div>
 @endif

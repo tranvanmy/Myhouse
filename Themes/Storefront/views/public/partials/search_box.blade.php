@@ -1,7 +1,7 @@
 <div class="search-area pull-left">
     <form action="{{ route('products.index') }}" method="GET" id="search-box-form">
         <div class="search-box hidden-sm hidden-xs">
-            <input type="text" name="query" class="search-box-input" placeholder="{{ trans('storefront::layout.search_for_products') }}" value="{{ request('query') }}">
+            <input type="text" name="query" id="search-box" class="search-box-input" placeholder="{{ trans('storefront::layout.search_for_products') }}" value="{{ request('query') }}">
 
             <div class="search-box-button">
                 <button class="search-box-btn btn btn-primary" type="submit">

@@ -34,10 +34,25 @@ class ProductController extends Controller
         if (request()->has('query')) {
             $model = $model->search(request('query'));
         }
+        $category = request()->query('category');
 
-        $products = $model->filter($productFilter)
+        $search = request()->query('query');
+        // if($category) : $search = null ? null;
+        if ($category) {
+            $search = null;
+        }
+        
+        if ($search) {
+            $products = Product::where('slug', 'LIKE', '%' . str_slug($search) . '%')->paginate(request('perPage', 15));
+        } else {
+            $products = $model->filter($productFilter)
             ->paginate(request('perPage', 15))
             ->appends(request()->query());
+        }
+
+      
+
+        // dd($productFilter);
 
         if (request()->wantsJson()) {
             return response()->json($products);
